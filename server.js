@@ -15,9 +15,10 @@ const io = new Server(server, {
 });
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://keshavkumarhf:keshavkumarhf@cluster0.os2nd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ MongoDB connected"))
     .catch(err => console.error("❌ MongoDB connection error:", err));
+
 
 
 // Define Schema & Model
